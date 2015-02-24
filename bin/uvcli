@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'uvcli'
+
+puts Uvcli::Cli::Application.start(ARGV)
