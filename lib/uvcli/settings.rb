@@ -11,6 +11,10 @@ module Uvcli
       load_values
     end
 
+    def sites
+      @values['sites']
+    end
+
     def add_site?(domain, key, secret)
       @values['sites'] << { "domain" => domain, "key" => key, "secret" => secret }
       store?

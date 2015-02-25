@@ -2,4 +2,4 @@
 
 require 'uvcli'
 
-puts Uvcli::Cli::Application.start(ARGV)
+Uvcli::Cli::Application.start(ARGV)
