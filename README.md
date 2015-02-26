@@ -12,7 +12,7 @@ Open a terminal window and install uvcli.
 
 Uvcli takes two commands `login` and `check`.
 
-![Uvcli commands](https://github.com/dangercove/uvcli/raw/master/screenshots/commands.jpg)
+![Uvcli commands](https://www.dropbox.com/s/riq96q1pin72qtc/commands.jpg?dl=1)
 
 ### Login
 
@@ -28,7 +28,7 @@ Uvcli will loop through each site that you've setup and look for open tickets. A
 
     $ uvcli check 
 
-![Uvcli tickets](https://github.com/dangercove/uvcli/raw/master/screenshots/tickets.jpg)
+![Uvcli tickets](https://www.dropbox.com/s/eytyqb8c5p4k9dr/tickets.jpg?dl=1)
 
 ### Removing sites
 
