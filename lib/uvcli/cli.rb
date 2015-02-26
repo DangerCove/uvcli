@@ -8,7 +8,7 @@ module Uvcli
      
       @@settings = Uvcli::Settings.new
 
-      desc "login", "Login to an existing UserVoice account."
+      desc "login", "Login to an existing UserVoice account"
       def login
         puts %{\nTo login to your UserVoice account we'll need your domain, key and secret.
 

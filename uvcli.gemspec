@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = "uvcli"
   spec.version       = Uvcli::VERSION
   spec.authors       = ["Boy van Amstel"]
-  spec.email         = ["boy@boyvanamstel.nl"]
+  spec.email         = ["boy@dangercove.com"]
   spec.summary       = "UserVoice Command Line Interface."
   spec.description   = "Manage your UserVoice account(s) from the command line."
-  spec.homepage      = "http://www.dangercove.com"
+  spec.homepage      = "https://www.github.com/dangercove/uvcli"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
