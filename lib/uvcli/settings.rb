@@ -1,5 +1,6 @@
 require "yaml"
 require "uvcli/version"
+require "fileutils"
 
 module Uvcli
   class Settings

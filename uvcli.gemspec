@@ -23,4 +23,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'thor', '~> 0.19'
   spec.add_dependency 'uservoice-ruby', '~> 0.0.11'
+  spec.add_dependency 'fileutils', '~> 0.7' 
 end
