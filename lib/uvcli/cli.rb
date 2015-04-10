@@ -75,31 +75,43 @@ To create a key and secret login to your UserVoice account, head over to Setting
         end
 
         return if all_tickets.empty?
-
+        
         puts "\nOpen ticket (#{green('#')} for ticket, #{green('a')} for all, #{red('q')} to quit):"
-        STDOUT.flush
-        ticketid = STDIN.gets.chomp.downcase
-       
-        if(ticketid.to_i > 0 and ticketid.to_i.is_a? Integer)
-          puts "Showing ticket #{ticketid.to_i}"
-          `open #{all_tickets[ticketid.to_i]['url']}`
-        elsif(ticketid == "a")
-          if(all_tickets.size > 10)
-            puts "\nAre you sure? This will open #{all_tickets.size} browser windows? [y/N]"
-            STDOUT.flush
-            sure = STDIN.gets.chomp.downcase
-            if(sure == "y")
-              puts "Showing all tickets"
-              all_tickets.each do |ticket|
-                `open #{ticket['url']}`
-                sleep(1.0/10.0)
-              end
-            end
-          end
-        end
+        ask_tickets(all_tickets)
+
       end
 
       private
+
+      def ask_tickets(tickets)
+        STDOUT.flush
+        ticketid = STDIN.gets.chomp.downcase
+      
+        if(ticketid.to_i > 0 and ticketid.to_i.is_a? Integer)
+          puts "Showing ticket #{ticketid.to_i}"
+          ticket = tickets[ticketid.to_i - 1]
+          `open #{ticket['url']}`
+          ask_tickets(tickets)
+        elsif(ticketid == "a")
+          if(tickets.size > 10)
+            puts "\nAre you sure? This will open #{tickets.size} browser windows? [y/N]"
+            STDOUT.flush
+            sure = STDIN.gets.chomp.downcase
+            if(sure != "y")
+              ask_tickets(tickets)
+              return
+            end
+          end
+          puts "Showing all tickets"
+          tickets.each do |ticket|
+            `open #{ticket['url']}`
+            sleep(1.0/10.0)
+          end
+          ask_tickets(tickets)
+        elsif(ticketid == "q")
+          return
+        end
+      end
 
       def colorize(text, color_code)
           "\e[#{color_code}m#{text}\e[0m"
